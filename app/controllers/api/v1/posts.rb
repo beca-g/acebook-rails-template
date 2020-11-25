@@ -26,12 +26,20 @@ module API
           Post.where(id: permitted_params[:id]).first!
         end
 
-      desc " deletes a post"
-      get ":id" do
+      # desc " deletes a post"
+      # delete ":id" do
 
-        Post.find(params[:id])
-        Post.destroy
-       end 
+      #   Post.find(permitted_params[:id])
+      #   Post.destroy
+      #  end 
+
+      desc "deletes a post"
+        params do
+        requires :id, type: String
+      end
+        delete ':id' do
+        Post.find(params[:id]).destroy!
+      end
      
 
 
