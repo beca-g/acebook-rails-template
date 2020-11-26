@@ -4,6 +4,13 @@ module API
       include API::V1::Defaults
       resource :posts do
 
+        # helpers do
+        #   def current_user
+        #     @current_user ||= User.authorize!(env)
+        #   end
+        # end
+
+
       desc "Creates a new post"
         params do 
           requires :message, type: String, desc: "message of the post"
@@ -26,12 +33,19 @@ module API
           Post.where(id: permitted_params[:id]).first!
         end
 
-      # desc " deletes a post"
-      # delete ":id" do
+      # currently not working
+      # desc "amends a post"
+      #   params do
+      #     requires :message, type: String, desc: "updated message"
+      #     requires :user_id, type: String, desc: "ID of the user"
+      #   end
+      #   route_param :id do
+      #   put ':id' do
+      #   Post.find(params[:id]).update
+   
+      #   end
+      # end
 
-      #   Post.find(permitted_params[:id])
-      #   Post.destroy
-      #  end 
 
       desc "deletes a post"
         params do

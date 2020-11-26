@@ -5,6 +5,8 @@ module Api
       end 
       def destroy
       end 
+      def update
+      end
     end
   end
 end
