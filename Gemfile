@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise'
+gem 'devise-jwt', '~> 0.7.0'
+gem 'responders'
 gem 'fast_jsonapi'
 gem 'parser'
 gem 'webpacker', '~> 5.x'
